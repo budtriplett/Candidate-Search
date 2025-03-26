@@ -8,7 +8,7 @@ const SavedCandidates = () => {
     const fetchSavedCandidates = () => {
       const storedCandidates = localStorage.getItem('savedCandidates');
       if (storedCandidates) {
-        setSavedCandidates(JSON.parse(storedCandidates)); 
+        setSavedCandidates(JSON.parse(storedCandidates));
       }
     };
     fetchSavedCandidates();

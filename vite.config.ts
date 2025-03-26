@@ -1,23 +1,28 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import dotenv from 'dotenv';
 
-// https://vitejs.dev/config/
+dotenv.config();
+
 export default defineConfig({
-  envDir: './env',  // Specifies that .env is in ./env directory
-  plugins: [
-    react(),
-  ],
+  envDir: './', 
+  base: '/', 
   build: {
+    outDir: 'dist', 
     rollupOptions: {
       plugins: [
         {
           name: 'log-env-variables',
           generateBundle() {
-            // Logs the value of the environment variable during the build process
-            console.log('VITE_GITHUB_TOKEN:', process.env.VITE_GITHUB_TOKEN);
+            console.log('VITE_GITHUB_TOKEN during build:', process.env.VITE_GITHUB_TOKEN);
           }
         }
       ]
     }
-  }
+  },
+  define: {
+    'process.env': process.env, 
+    'import.meta.env.VITE_GITHUB_TOKEN': JSON.stringify(process.env.VITE_GITHUB_TOKEN), 
+  },
+  plugins: [react()], 
 });
