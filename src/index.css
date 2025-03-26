@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -117,4 +118,104 @@ tbody tr:nth-child(odd) {
 .table {
   width: 80vw;
   table-layout: fixed;
+}
+
+.kanban-board {
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  font-size: 2.5em;
+  margin-bottom: 2rem;
+}
+
+.kanban-column {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kanban-column h2 {
+  color: white;
+  font-size: 1.8em;
+  margin-bottom: 1rem;
+}
+
+.candidate-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.candidate-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.candidate-card:hover {
+  transform: scale(1.05);
+}
+
+.candidate-columns {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns for each attribute */
+  gap: 1rem;
+  align-items: center;
+}
+
+.candidate-column {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.candidate-column h3 {
+  font-size: 1em;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #646cff;
+}
+
+.remove-btn {
+  background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+  color: white;
+  padding: 0.8em 1.5em;
+  font-size: 1.1em;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.remove-btn:hover {
+  background: linear-gradient(135deg, #ff1a1a, #ff4d4d);
+  transform: scale(1.05);
+}
+
+.remove-btn:active {
+  transform: scale(0.95);
 }
